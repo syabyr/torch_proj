@@ -4,6 +4,10 @@ if(UNIX AND NOT APPLE)
   set(LINUX TRUE)
 endif()
 
+if(JETSON)
+ set(Torch_DIR /usr/local/lib/python3.6/dist-packages/torch/share/cmake/Torch)
+endif()
+
 project(multi-layered-perceptron)
 
 set(CMAKE_CXX_STANDARD 14)
