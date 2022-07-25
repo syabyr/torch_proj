@@ -7,7 +7,10 @@ endif()
 project(example-app)
 
 set(CMAKE_CXX_STANDARD 11)
-set(Torch_DIR /usr/local/lib/python3.6/dist-packages/torch/share/cmake/Torch)
+
+if(JETSON)
+ set(Torch_DIR /usr/local/lib/python3.6/dist-packages/torch/share/cmake/Torch)
+endif()
 
 find_package(Torch REQUIRED)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TORCH_CXX_FLAGS}")
