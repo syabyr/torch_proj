@@ -5,7 +5,7 @@ option(INSTALL_TORCH "Automatically download and install libtorch." ON)
 option(CUDA "Download GPU Version" ON)
 option(INSTALL_PYTHON_DEPENDENCIES "Install Python Dependencies during build" ON)
 option(DOWNLOAD_MNIST "Download the MNIST Dataset during build" ON)
-
+option(JETSON "jetson build" OFF)
 
 
 set(CMAKE_CXX_STANDARD 14)
@@ -15,7 +15,8 @@ set(EXECUTABLE_NAME main)
 include_directories(${PROJECT_NAME} ${CMAKE_SOURCE_DIR}/include)
 
 if(JETSON)
- set(Torch_DIR /usr/local/lib/python3.6/dist-packages/torch/share/cmake/Torch)
+  message(STATUS ">>> Jetson")
+  set(Torch_DIR /usr/local/lib/python3.6/dist-packages/torch/share/cmake/Torch)
 endif()
 
 find_package(Torch REQUIRED)
