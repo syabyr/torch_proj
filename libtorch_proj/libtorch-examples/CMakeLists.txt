@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.19)
+cmake_minimum_required(VERSION 3.0)
 project(libtorch-examples)
 
 option(INSTALL_TORCH "Automatically download and install libtorch." ON)
